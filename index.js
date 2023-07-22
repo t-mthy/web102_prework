@@ -73,20 +73,23 @@ const contributionsCard = document.getElementById("num-contributions");
 const totalContributions = GAMES_JSON.reduce((totalBackers, gameObj) => totalBackers + gameObj.backers, 0);
 
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
-contributionsCard.innerHTML = `${totalContributions.toLocaleString('en-US')}`;
+const totalContributionsFormatted = totalContributions.toLocaleString('en-US');
+contributionsCard.innerHTML = `${totalContributionsFormatted}`;
 
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
 const totalRaised = GAMES_JSON.reduce((totalPledged, gameObj) => totalPledged + gameObj.pledged, 0);
 
 // set inner HTML using template literal
-raisedCard.innerHTML = `$${totalRaised.toLocaleString('en-US')}`;
+const totalRaisedFormatted = totalRaised.toLocaleString('en-US');
+raisedCard.innerHTML = `$${totalRaisedFormatted}`;
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
 const totalGames = GAMES_JSON.length;
 
-gamesCard.innerHTML = `${totalGames.toLocaleString('en-US')}`;
+const totalGamesFormatted = totalGames.toLocaleString('en-US');
+gamesCard.innerHTML = `${totalGamesFormatted}`;
 
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
@@ -143,12 +146,15 @@ allBtn.addEventListener("click", showAllGames);
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
-
+const unfundedGamesCount = GAMES_JSON.filter(gameObj => gameObj.pledged < gameObj.goal).length;
 
 // create a string that explains the number of unfunded games using the ternary operator
-
+const displayStr = `A total of $${totalRaisedFormatted} has been raised for ${totalGamesFormatted} ${totalGames === 1 ? 'game' : 'games'}. Currently, ${unfundedGamesCount} ${unfundedGamesCount === 1 ? 'game remains' : 'games remain'} unfunded.${unfundedGamesCount > 0 ? ` We need your help to fund ${unfundedGamesCount === 1 ? 'this amazing game' : 'these amazing games'}!` : ''}`;
 
 // create a new DOM element containing the template string and append it to the description container
+const statsParagraph = document.createElement("p");
+statsParagraph.innerHTML = displayStr;
+descriptionContainer.appendChild(statsParagraph);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
