@@ -11,12 +11,18 @@ body {
 
 .header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: lightblue;
     padding: 1%;
-    align-items: center;
     margin-left: -10px;
     margin-right: -10px;
     margin-top: -10px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 
 .stats-container {

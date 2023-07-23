@@ -208,3 +208,15 @@ firstGameContainer.appendChild(topGamePara);
 const runnerUpGamePara = document.createElement('p');
 runnerUpGamePara.innerHTML = `${runnerUpGame.name}`;
 secondGameContainer.appendChild(runnerUpGamePara);
+
+/************************************************************************************
+ * BONUS: Additional functionalities
+ * 1) Top nav bar button
+ */
+
+// 1) Top nav bar button to jump to Our Game section quickly
+const ourGamesBtn = document.getElementById('our-games-btn');
+const ourGamesDiv = document.getElementById('button-container');
+ourGamesBtn.addEventListener('click', () =>
+    ourGamesDiv.scrollIntoView({ behavior: 'smooth' })
+);
