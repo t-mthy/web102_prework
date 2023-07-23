@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
 
+:root {
+    --primary-seafoam: #2bede3;
+    --secondary-seafoam: #8ffff6;
+    --tentacle-green: #b8fcd5;
+    --medium-purple: #8129d9;
+    --light-purple: #be7dff;
+}
+
 body {
     font-family: 'Cabin';
-    background-color: #758190;
+    background-color: lightseagreen;
 }
 
 #tentacles {
@@ -13,7 +21,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: lightblue;
+    background-color: var(--primary-seafoam);
     padding: 1%;
     margin-left: -10px;
     margin-right: -10px;
@@ -32,11 +40,11 @@ body {
 
 .stats-container:hover {
     cursor: pointer;
-    box-shadow: 0 0 30px lightblue;
+    box-shadow: 0 0 30px var(--primary-seafoam);
 }
 
 .stats-card {
-    background-color: #a8b0bc;
+    background-color: var(--secondary-seafoam);
     border-radius: 7px;
     padding: 1%;
     margin: 1%;
@@ -59,11 +67,11 @@ body {
 .game-img {
     width: 100%;
     border-radius: 5px;
-    box-shadow: 0 0 10px #ffffff;
+    box-shadow: 0 0 10px lightcyan;
 }
 
 .game-card {
-    background-color: #ffffff;
+    background-color: lightcyan;
     padding: 1%;
     margin: 1%;
     width: 300px;
@@ -73,7 +81,7 @@ body {
 
 .game-card:hover {
     cursor: pointer;
-    box-shadow: 0 0 30px lightblue;
+    box-shadow: 0 0 30px var(--primary-seafoam);
 }
 
 #button-container {
@@ -82,10 +90,19 @@ body {
 
 button {
     font-family: 'Cabin';
-    border: none;
+    font-weight: bold;
+    background-color: var(--tentacle-green);
+    border: 3px solid var(--tentacle-green);
     padding: 1%;
     margin: 1%;
     border-radius: 7px;
+    transition: all 0.1s;
+}
+
+button:hover {
+    border-color: var(--light-purple);
+    box-shadow: 0 0.5em 0.3em -0.2em var(--medium-purple);
+    transform: translateY(-0.3em);
 }
 
 #back-to-top-btn {
@@ -93,8 +110,8 @@ button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: lightblue;
-    color: #758190;
+    background-color: var(--primary-seafoam);
+    color: lightseagreen;
     border: none;
     border-radius: 7px;
     width: 60px;
@@ -103,9 +120,11 @@ button {
     text-align: center;
     cursor: pointer;
     opacity: 0.7;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 
 #back-to-top-btn:hover {
     opacity: 1;
+    box-shadow: none;
+    transform: none;
 }
