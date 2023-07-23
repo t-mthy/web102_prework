@@ -87,3 +87,25 @@ button {
     margin: 1%;
     border-radius: 7px;
 }
+
+#back-to-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: lightblue;
+    color: #758190;
+    border: none;
+    border-radius: 7px;
+    width: 60px;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#back-to-top-btn:hover {
+    opacity: 1;
+}

@@ -212,6 +212,7 @@ secondGameContainer.appendChild(runnerUpGamePara);
 /************************************************************************************
  * BONUS: Additional functionalities
  * 1) Top nav bar button
+ * 2) Back-to-top button
  */
 
 // 1) Top nav bar button to jump to Our Game section quickly
@@ -220,3 +221,14 @@ const ourGamesDiv = document.getElementById('button-container');
 ourGamesBtn.addEventListener('click', () =>
     ourGamesDiv.scrollIntoView({ behavior: 'smooth' })
 );
+
+// 2) Back-to-top button to return to top of page quickly
+const backToTopBtn = document.getElementById('back-to-top-btn');
+window.addEventListener('scroll', () => {
+    window.scrollY > 500
+        ? (backToTopBtn.style.display = 'block')
+        : (backToTopBtn.style.display = 'none');
+});
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
